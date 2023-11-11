@@ -160,13 +160,13 @@ table {
 
 /* Default light mode styles (if needed) */
 body {
-  background-color: white; /* Example color for light mode */
+  background-color: white;
 }
 
 /* Styles for users who prefer dark mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: darkgray; /* Change this to your desired dark mode color */
+    background-color: darkgray;
   }
 }
 
@@ -234,14 +234,16 @@ footer .icon {
 
 /* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
 /* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
-@-webkit-keyframes icon-animation {
-  0% {
-    font-variation-settings: "TIME" 1;
+@media (prefers-reduced-motion: reduce) {
+  @-webkit-keyframes icon-animation {
+    0% {
+      font-variation-settings: "TIME" 1;
+    }
   }
-}
-@keyframes icon-animation {
-  0% {
-    font-variation-settings: "TIME" 1;
+  @keyframes icon-animation {
+    0% {
+      font-variation-settings: "TIME" 1;
+    }
   }
 }
 /* --------------- END USER PREFERS REDUCED MOTION QUERY --------------- */
@@ -411,10 +413,11 @@ img {
 
 /* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
 /* --------------- BEGIN RESPONSIVE IMAGE ADJUST SIZES --------------- */
-/* img{
-        width: 300px;
-        max-width: 300px;
-    } */
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
 /* --------------- END RESPONSIVE IMAGE ADJUST SIZES --------------- */
 
 /* ---------- EXTRA LARGE SCREEN STYLES ---------- */
